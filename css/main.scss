@@ -1,0 +1,138 @@
+@import url(https://fonts.googleapis.com/css2?family=Iceland&amp;display=swap);
+
+// VARIABLES
+$dark-color: #1a1a1a;
+$light-color: #ccc;
+$special-blue: #5ddef5;
+
+// GERAL
+body {
+  font-family: "Iceland";
+}
+// APP NAME
+body div.appName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15vh;
+}
+body div.appName span {
+  font-size: 64px;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+// COUNTUP CLOCK
+body div.min {
+  padding-left: 20px;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 64px;
+}
+// CONTROL BUTTONS
+#switchToggle {
+  width: 60px;
+  height: 60px;
+  border: 4px solid $special-blue;
+  border-radius: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+body div.controls {
+  display: flex;
+  justify-content: center;
+}
+body div.controls button {
+  background: none;
+}
+.btn {
+  font-family: "Iceland";
+  display: block;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-size: 200%;
+  font-weight: bold;
+  margin: 0 15px;
+  padding: 10px 20px;
+  border: solid 2px $special-blue;
+  border-radius: 10px;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: $special-blue;
+    z-index: -1;
+    transition: 0.7s ease;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.btnPlay {
+  &:before {
+    width: 110%;
+    height: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &:hover {
+    &:before {
+      height: 350%;
+    }
+  }
+}
+.btnPause {
+  &:before {
+    top: 0;
+    width: 120%;
+    height: 0;
+    border-radius: 40%;
+  }
+
+  &:hover {
+    &:before {
+      top: 30;
+      height: 350%;
+    }
+  }
+}
+.btnReset {
+  &:before {
+    width: 105%;
+    height: 0;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    &:before {
+      height: 350%;
+    }
+  }
+}
+
+body.light-mode {
+  background-color: $light-color;
+  color: $dark-color;
+  .btn {
+    color: $dark-color;
+  }
+  #switchToggle {
+    background-color: $dark-color;
+  }
+}
+
+body.dark-mode {
+  background-color: $dark-color;
+  color: $light-color;
+  .btn {
+    color: $light-color;
+  }
+}

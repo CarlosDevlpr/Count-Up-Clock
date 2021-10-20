@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio com J.S e SCSS</title>
+    <link rel="stylesheet" href="../Clock/css/main.css">
+    <link rel="stylesheet" href="../Clock/DarkMode/css/DarkMode.css">
+    <link rel="stylesheet" href="../Clock/LightMode/css/LightMode.css">
+    <link rel="stylesheet" href="../Clock/js/app.js">
+</head>
+    <body id="body" class="dark-mode">
+        <button id="switchToggle" type="button" onclick="toggleDarkLight()"><img src="https://purposemidia.com.br/wp-content/uploads/2021/10/iconDark-1.svg"></button>
+        <div class="appName">
+            <img src="https://cdn-icons-png.flaticon.com/128/1584/1584942.png"><span>Clock</span>
+        </div>
+        <div class="min" data-min="time-min">
+            <span>00</span>:
+            <span>00</span>:
+            <span>00</span>
+        </div>
+        <div class="controls">
+            <button type="button" class="btn bignner btnPlay">Play</button>
+            <button type="button" class="btn stop btnPause">Pause</button>
+            <button type="button" class="btn reset btnReset">Reset</button>
+        </div>
+        <script src="../Clock/js/app.js"></script>
+    </body>
+</html>
